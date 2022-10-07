@@ -18,7 +18,8 @@
                     //type = "text"
                     if (cajitas[i].type == "text") {
 
-                        //Generamos un valor aleatorio para el valor de cada input
+                        //Generamos un valor aleatorio para el valor de cada input y se trunca
+                        //para que no haya decimales
                         cajitas[i].value = Math.trunc(Math.random()*100);
 
                         //Guardamos el numero aleatorio generado para comprobar si es par o impar
