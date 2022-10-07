@@ -46,20 +46,24 @@
                 //Si no es null (Hemos seleccionado un radio) y entramos en el if
                 if (radioActivo != null){
 
+                    //Recogemos el valor de la seleccion (par o impar)
                     let seleccion = radioActivo.value;
 
-                    //Recogemos la suma de las checkbox que esten checked
+                    //Recogemos la suma de los input en esta variable
                     var suma = 0;
 
                     let cajitas = document.getElementsByTagName("input");
-                    //Recorremos todos los input que hay (range y checkbox)
+                    //Recorremos todos los input que hay (radio y checkbox)
                     for (var i = 0; i < cajitas.length; i++ ) {
                         
+                        //Si son tipo texto cogemos el numero, sino, no hacemos nada
                         if (cajitas[i].type == "text") {
 
+                            //Convertimos en numero el valor del input
                             var numero = parseInt(cajitas[i].value);
-                            //Como hay un range, filtramos para que solo sea 
-                            //type = "checkbox"
+
+                            //Comprobamos si la seleccion es par o impar. Ademas
+                            //debemos comprobar los numeros para no sumar todos
                             if (seleccion == "par") {
 
                                 if (numero%2 == 0) {
