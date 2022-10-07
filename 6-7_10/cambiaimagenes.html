@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <img src="images/img3.jpg" width="500" height="500">
+        <img src="images/img2.jpg" width="500" height="500">
+        <img src="images/img1.jpg" width="500" height="500">
+
+        <script>
+
+             window.onload = function() {
+
+
+                var imagenes = document.getElementsByTagName("img");
+
+                for (var i=0; i < imagenes.length; i++) {
+
+                    var imagen = imagenes[i];
+
+                    imagen.onmouseenter = cambiaImagen;
+
+                }
+                
+             }
+
+             function cambiaImagen() {
+
+                this.src = "images/img4.jpg";
+
+                this.onmouseleave = compruebaNum;
+
+             }
+
+             function compruebaNum() {
+
+                var imagenes = document.getElementsByTagName("img");
+
+                if (this == imagenes[0]) {
+
+                    this.src = "images/img3.jpg";
+
+                }else if (this == imagenes[1]) {
+
+                    this.src = "images/img2.jpg";
+
+                }else{
+
+                    this.src = "images/img1.jpg";
+
+                }
+                
+
+             }
+            
+
+        </script>
+    </body>
+    
+</html>

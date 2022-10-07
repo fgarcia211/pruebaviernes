@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+
+            function calcularDNI() {
+                //Comentarios
+                var cadena = document.getElementById("caja1").value;
+
+                if (cadena != ""){
+
+                    var dni = parseInt(cadena);
+                    var cadenaLetras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+
+                    var posLetra = (dni - parseInt(dni/23) * 23);
+
+                    document.getElementById("resultado").textContent = "La letra de su DNI es " + cadenaLetras[posLetra];
+
+                    }else{
+
+                        document.getElementById("caja1").style.borderColor = "red";
+
+                    }
+
+            }
+
+        </script>
+    </head>
+    <body>
+        <label>Introduce numero del DNI</label>
+        <input type="text" id="caja1">
+        <br><br>
+        <button type="button" onclick="calcularDNI()">Calcular letra</button>
+        <h1 id="resultado"></h1>
+    </body>
+</html>

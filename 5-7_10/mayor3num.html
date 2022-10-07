@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            
+
+            function compruebaNum() {
+                //Comentarios
+
+                var num1 = 0;
+                var num2 = 0;
+                var num3 = 0;
+
+                num1 = parseInt(document.getElementById("caja1").value);
+                num2 = parseInt(document.getElementById("caja2").value);
+                num3 = parseInt(document.getElementById("caja3").value);
+
+                var cadena = new Array();
+
+                cadena.push(num1,num2,num3);
+                cadena.sort(function(a, b){return a - b});
+
+                console.log(cadena);
+
+                var mayor = document.getElementById("mayor").innerHTML ="Mayor: " + cadena[2];
+                var menor = document.getElementById("menor").innerHTML ="Menor: " + cadena[0];
+                var medio = document.getElementById("medio").innerHTML ="Intermedio: " + cadena[1];
+            
+            }
+
+        </script>
+    </head>
+    <body>
+        <label>Numero 1</label>
+        <input type="text" id="caja1">
+        <br><br>
+        <label>Numero 2</label>
+        <input type="text" id="caja2">
+        <br><br>
+        <label>Numero 3</label>
+        <input type="text" id="caja3">
+        <br><br>
+        <button type="button" onclick="compruebaNum()">Evaluar numeros</button>
+        <br><br>
+        <h1 id="mayor"></h1>
+        <h1 id="menor"></h1>
+        <h1 id="medio"></h1>
+    </body>
+</html>

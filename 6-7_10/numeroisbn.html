@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+
+            function validarISBN() {
+                //Comentarios
+                var resultado = 0;
+                var cadena = document.getElementById("caja1").value;
+
+                for (var i=0; i < cadena.length; i++) {
+
+                    var multi = parseInt(cadena[i]) * (i+1);
+                    
+                    resultado += multi;
+
+                }
+
+                if (resultado%11 == 0) {
+
+                    document.getElementById("resultado").innerHTML ="El ISBN es correcto";
+
+                }else{
+
+                    document.getElementById("resultado").innerHTML ="El ISBN no es correcto";
+
+                }
+
+            }
+
+        </script>
+    </head>
+    <body>
+        <label>Introduce numero del ISBN</label>
+        <input type="text" id="caja1">
+        <br><br>
+        <button type="button" onclick="validarISBN()">Validar ISBN</button>
+        <h1 id="resultado"></h1>
+    </body>
+</html>

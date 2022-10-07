@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Sumar botones</h1>
+        
+        <button type="button" id="bot1">2</button>
+        <button type="button" id="bot2">4</button>
+        <button type="button" id="bot3">1</button>
+        <button type="button" id="bot4">6</button>
+
+        <h1 style="color:blue" id="resultado"></h1>
+
+        <script>
+
+            var suma = 0;
+
+             window.onload = function() {
+                
+                boton1 = document.getElementById("bot1");
+                boton2 = document.getElementById("bot2");
+                boton3 = document.getElementById("bot3");
+                boton4 = document.getElementById("bot4");
+
+                boton1.onclick = function() { sumaNumeros(parseInt(boton1.textContent));} 
+                boton2.onclick = function() { sumaNumeros(parseInt(boton2.textContent));}
+                boton3.onclick = function() { sumaNumeros(parseInt(boton3.textContent));} 
+                boton4.onclick = function() { sumaNumeros(parseInt(boton4.textContent));} 
+                
+            }
+
+            
+
+            function sumaNumeros(numero) {
+
+                suma = suma + numero;
+
+                document.getElementById("resultado").innerHTML = "La suma es: " + suma;
+
+            }
+            
+
+        </script>
+    </body>
+    
+</html>

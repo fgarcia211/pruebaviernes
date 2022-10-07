@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+
+            window.onload = creaImagen;
+
+            function creaImagen() {
+                
+                //Recogemos el valor del range
+                //Recogemos la capa donde guardas las img
+                //Asignamos el valor para que se muestre el parrafo p
+                var valor = parseInt(document.getElementById("rango1").value);
+                var capa = document.getElementById("capa");
+                var etiRango = document.getElementById("valorrango").innerHTML = valor;
+
+                //Reiniciamos la capa para eliminar imagenes
+                capa.innerHTML = "";
+
+                //Hacemos bucle donde se crean las imagenes, se asignan
+                //los atributos y eventos, y se añade a la capa
+                for (var i=0; i < valor; i++) {
+
+                    var imagen = document.createElement("img");
+                    imagen.src = "images/img4.jpg";
+                    imagen.style.width = "200px";
+                    imagen.style.height = "200px";
+                    imagen.addEventListener("click",eliminaImagen);
+
+                    capa.appendChild(imagen);
+                }
+            }
+
+            function eliminaImagen() {
+
+                //Del elemento al que clickamos, pasa al padre, y el padre
+                //lo busca para eliminarlo
+                this.parentNode.removeChild(this);
+            }
+
+        </script>
+    </head>
+    <body>
+        <label>Controles dinamicos</label>
+        <input type="range" id="rango1" min="1" max="14" value="1" onchange="creaImagen()">
+
+        <p id="valorrango">1</p>
+        <div id="capa"></div>
+
+    </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Sumar botones</h1>
+        
+        <button type="button">2</button>
+        <button type="button">4</button>
+        <button type="button">1</button>
+        <button type="button">6</button>
+
+        <h1 style="color:blue" id="resultado"></h1>
+
+        <script>
+
+            var suma = 0;
+
+             window.onload = function() {
+
+                
+                document.getElementById("resultado").innerHTML = "La suma es: " + suma;
+
+                var botones = document.getElementsByTagName("button");
+
+                for (var i=0; i < botones.length; i++) {
+
+                    var boton = botones[i];
+
+                    boton.onclick = sumaNumeros;
+
+                }
+
+
+                for (var indice in botones) {
+
+                    console.log(indice);
+
+                }
+
+                for (var boton of botones) {
+
+                    console.log("Boton "+boton.innerText)
+                }
+                
+            }
+
+            
+
+            function sumaNumeros() {
+                //El this ya se refiere al elemento que lo llama
+
+                var numero = parseInt(this.innerText);
+
+                suma = suma + numero;
+
+                document.getElementById("resultado").innerHTML = "La suma es: " + suma;
+
+                this.style.backgroundColor = "crimson";
+                this.style.color = "white";
+
+            }
+            
+
+        </script>
+    </body>
+    
+</html>

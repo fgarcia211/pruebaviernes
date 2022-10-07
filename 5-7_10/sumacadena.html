@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+
+            function sumarNumerosEsp() {
+                //Comentarios
+                var cadena = document.getElementById("caja1").value;
+                var resultado = 0;
+
+                var numeros = cadena.split(" ");
+
+                for (var i = 0; i < numeros.length; i++){
+
+                    resultado += parseInt(numeros[i]);
+
+                }
+                
+                document.getElementById("resultado").textContent = resultado;
+
+                console.log(numeros);
+
+            }
+
+            function sumarNumeros() {
+                //Comentarios
+                var cadena = document.getElementById("caja1").value;
+                var resultado = 0;
+
+                for (var i = 0; i < cadena.length; i++){
+
+                    if (parseInt(cadena[i] != "NaN")) {
+
+                        resultado += parseInt(cadena[i]);
+                        
+                    }
+                    
+
+                }
+                
+                document.getElementById("resultado").textContent = resultado;
+
+            }
+
+        </script>
+    </head>
+    <body>
+        <label>Introduce numeros separados de un espacio o todo junto</label>
+        <input type="text" id="caja1">
+        <br><br>
+        <button type="button" onclick="sumarNumerosEsp()">Sumar números con espacios</button>
+        <button type="button" onclick="sumarNumeros()">Sumar números sin espacios</button>
+        <h1 id="resultado"></h1>
+    </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <script>
+
+            function mostrarColor() {
+                
+                var colores = document.getElementsByName("colores");
+
+                for (var radio of colores) {
+
+                    
+
+                    if (radio.checked) {
+
+                        var color = radio.value;
+
+                        console.log(document.getElementById("colorin"));
+
+                        document.getElementById("colorin").style.backgroundColor = color;
+                        document.getElementById("colorin").innerText = color;
+
+                    }
+                }
+
+            }
+
+            function mostrarDeporte() {
+
+                var select = document.getElementById("deportes");
+
+                for (var opcion of select.options) {
+
+                    if (opcion.selected) {
+
+                        var deporte = opcion.value;
+
+                        document.getElementById("deporte").innerText = deporte;
+
+                    }
+                }
+
+            }
+
+        </script>
+
+    </head>
+    <body>
+
+        <h1 id="deporte"></h1>
+        <h1 id="colorin"></h1>
+
+        <label>Selecciona tu deporte favorito</label>
+
+        <select name="deportes" id="deportes">
+            <option value="futbol">Futbol</option>
+            <option value="basket">Basket</option>
+            <option value="tenis">Tenis</option>
+        </select>
+
+        <br><br>
+
+        <label>Confirma si eres jugador: </label><input type="checkbox" id="jugador">
+
+        <br><br>
+
+        <input type="radio" name="colores" value="blue"> Azul<br>
+        <input type="radio" name="colores" value="red"> Rojo<br>
+        <input type="radio" name="colores" value="yellow"> Amarillo
+
+        <br><br>
+        <button type="button" onclick="mostrarDeporte()">Mostrar deporte</button>
+        <button type="button" onclick="mostrarColor()">Mostrar color</button>
+
+    </body>
+    
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Eventos delegados</h1>
+        <h1 style="color:blue" id="resultado"></h1>
+        <button type="button" onclick="asociarEventos()">Asociar eventos</button>
+        <button type="button" id="botonacciones">Realizar cosas</button>
+
+        <script>
+
+             window.onload = function() {
+
+
+                //Si se comenta linea debes darle primero al asociar eventos
+
+                // var boton = document.getElementById("botonacciones");
+
+                // boton.addEventListener("click", mostrarMensaje);
+                
+             }
+
+            var contador = 0;
+            //FUNCION PARA MOSTRAR UN MENSAJE
+            function mostrarMensaje() {
+
+                alert("mensaje molesto....");
+
+            }
+
+            function mostrarMensaje2() {
+
+                alert("mensaje molesto de nuevo....");
+s
+            }
+
+            function asociarEventos() {
+
+                contador += 1;
+                document.getElementById("resultado").innerHTML = "Eventos asociados: " + contador;
+
+                // document.getElementById("botonacciones").onclick = mostrarMensaje; 
+                // document.getElementById("botonacciones").onclick = mostrarMensaje2;
+
+                // document.getElementById("botonacciones").addEventListener("click", mostrarMensaje);
+                // document.getElementById("botonacciones").addEventListener("click", mostrarMensaje2); 
+
+                //document.getElementById("botonacciones").onclick = function() { alert("mensaje en funcion anonima"); } 
+                document.getElementById("botonacciones").addEventListener("click", function() { alert("mensaje en funcion anonima: " + this.innerHTML);this.style.borderColor = "green"; }); //Unica funcion que hace repetir alerts
+
+            }
+            
+
+        </script>
+    </body>
+    
+</html>
